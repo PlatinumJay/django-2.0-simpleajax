@@ -1,4 +1,4 @@
-# django-simpleajax
+# django-2.0-simpleajax
 
 ## General
 A simple app for Django 2.0+ with a form that sends back the input data on button click via AJAX.
