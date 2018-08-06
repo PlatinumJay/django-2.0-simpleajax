@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple AJAX Form</title>
+</head>
+<body>
+
+<form id="ajaxform" method="post">
+    {% csrf_token %}
+
+    Field1: <input type="text" name="field1" class="field1" value="" size="50" />
+    <br />
+
+    <input type="submit" value="Send" />
+  </form>
+  <div id="output"></div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(function(){
+         $('#ajaxform').submit(function(event) {
+           event.preventDefault();
+           $.ajax({
+               type: 'POST',
+               url: '/main/simpleajax',
+               dataType: 'json',
+               data: $('#ajaxform').serialize(),
+               success: function (data, textStatus) {
+                   $('#output').html("");
+                   $('#output').html(JSON.stringify(data));
+               },
+               error: function(status, e) {
+                   alert(status, e);
+               }
+           });
+         });
+    });
+</script>
+
+</body>
+</html>
