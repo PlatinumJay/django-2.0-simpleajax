@@ -17,7 +17,7 @@ A simple app for Django 2.0+ with a form that sends back the input data on butto
 
 ## Usage
 
-###Create the app for your project. In this example the app is named Home. Update your main settings.py to include the home app:
+Create the app for your project. In this example the app is named Home. Update your main settings.py to include the home app:
 
 ```sh
 settings.py
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-###Update the project urls.py file to add the Home app. Add the import include as well.
+Update the project urls.py file to add the Home app. Add the import include as well.
 
 ```sh
 urls.py
